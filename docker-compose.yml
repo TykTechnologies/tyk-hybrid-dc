@@ -8,6 +8,8 @@ services:
       - ./tyk.conf:/opt/tyk-gateway/tyk.conf
     depends_on:
       - tyk-worker-redis
+    env_file:
+      - .env
   tyk-worker-redis:
     image: redis:6.0.4
     volumes:
